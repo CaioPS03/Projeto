@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+<<<<<<< HEAD
 
 // função que mostra as regras do jogo e faz uma apresentação
 void apresentacao(char confirma) {
@@ -36,12 +37,27 @@ int difficulty(int difficulty) {
     } else {
         printf("Caractere inválido. Vai ter que reiniciar.");
     }
+=======
+#include <time.h>
+
+#include "questoes.h"
+
+void chamar() {
+    char f;
+    scanf("%c", &f);
+>>>>>>> 0af6e63 (Atualização)
 }
 
 int main() {
     char confirmacao, nome[20];
     int dificuldade;
+<<<<<<< HEAD
     apresentacao(confirmacao);
     jogador(nome);
     difficulty(dificuldade);
+=======
+    
+    FILE *questoes[15];
+    questao(questoes);
+>>>>>>> 0af6e63 (Atualização)
 }
