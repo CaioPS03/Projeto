@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-
-int questao(FILE *questao[15]) {
+int questao(FILE *questao[15])
+{
     int p = 0, i, c;
     char question[100], r;
     char answer[16] = "ddddddddddddddd";
@@ -25,16 +25,27 @@ int questao(FILE *questao[15]) {
 
     srand(time(NULL));
 
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < 5; i++)
+    {
+        system("cls");
         c = rand() % 14;
-        while (fgets(question, 100, questao[c]) !=NULL) {
+        while (fgets(question, 100, questao[c]) != NULL)
+        {
             printf("%s\n", question);
         }
-        r = chamar();
-        if (r == answer[c]) {
+
+        scanf("%c", &r);
+
+        if (r == 10)
+        {
+            scanf("%c", &r);
+        }
+
+        if (r == answer[c])
+        {
             p++;
         }
     }
-    
+
     return c;
 }
