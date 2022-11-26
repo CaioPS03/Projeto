@@ -1,63 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-<<<<<<< HEAD
-
-// função que mostra as regras do jogo e faz uma apresentação
-void apresentacao(char confirma) {
-    setlocale(LC_ALL, "Portuguese");
-    printf("Olá, caro jogador! Bem-vindo ao nosso humilde desafio. \n");
-    printf("Você participará de algumas questões preparadas pelos desenvolvedores. \n");
-    printf("A dificuldade e quantidade das questões vai depender da dificuldade que escolher. \n");
-    printf("E então? Preparado? Se sim, pressione ENTER. ");
-    scanf("%c", &confirma);
-    if (confirma = 13){
-        printf("Ótimo, vamos começar então!\n");
-    }
-}
-
-// função que pega o nome do jogador
-static char* jogador(char identificacao[]) {
-    printf("Primeiro de tudo... Qual o seu nome? \n");
-    scanf("%s", identificacao);
-    printf("Beleza, %s, agora vai!\n", identificacao);
-    return identificacao;
-}
-
-// função que seleciona a dificuldade
-int difficulty(int difficulty) {
-    printf("Vamos começar com a dificuldade. Digite 1 para fácil, 2 para médio ou 3 para difícil.\n");
-    scanf("%d", &difficulty);
-    if (difficulty == 1){
-        printf("Vai jogar no fácil? Tá de brincadeira?");
-    } else if (difficulty == 2) {
-        printf("Médio? Aceitável.");
-    } else if (difficulty == 3) {
-        printf("Difícil? Ai sim, gostei.");
-    } else {
-        printf("Caractere inválido. Vai ter que reiniciar.");
-    }
-=======
 #include <time.h>
-
+#include "iniciar.h"
+#include "dificuldade.h"
 #include "questoes.h"
 
-void chamar() {
-    char f;
-    scanf("%c", &f);
->>>>>>> 0af6e63 (Atualização)
-}
 
 int main() {
-    char confirmacao, nome[20];
-    int dificuldade;
-<<<<<<< HEAD
-    apresentacao(confirmacao);
-    jogador(nome);
-    difficulty(dificuldade);
-=======
-    
-    FILE *questoes[15];
-    questao(questoes);
->>>>>>> 0af6e63 (Atualização)
+    char nome[20];
+    int dificuldade, op, pt;
+    FILE *questoesF[15], *questoesM[20], *questoesD[25];
+        do { op = iniciar(op);
+        switch (op) {
+        case 1:
+            apresentacao();
+            jogador(nome);
+            dificuldade = difficulty(dificuldade);
+            switch (dificuldade) {
+            case 1:
+                pt = questaoFacil(questoesF);
+                break;
+
+            case 2:
+                pt = questaoMedio(questoesM);
+                break;
+
+            case 3:
+                pt = questaoDificil(questoesD);
+                break;
+            
+            default:
+                break;
+            }
+            break;
+
+        case 3:
+            system("cls");
+            break;
+        
+        default:
+            break;
+            }
+        }while (op != 3);
 }

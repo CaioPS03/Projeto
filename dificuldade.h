@@ -2,16 +2,14 @@
 #include <stdlib.h>
 
 // função que mostra as regras do jogo e faz uma apresentação
-void apresentacao(char confirma) {
+void apresentacao() {
+    char confirma;
     system("cls");
     printf("Ola, caro jogador! Bem-vindo ao nosso humilde desafio. \n");
     printf("Você participara de algumas questoes preparadas pelos desenvolvedores. \n");
     printf("A dificuldade e quantidade das questoes vai depender da dificuldade que escolher. \n");
-    printf("E entao? Preparado? Se sim, pressione ENTER.");
-    scanf("%c", &confirma);
-    if (confirma = 13){
-        printf("Otimo, vamos começar entao!\n");
-    }
+    printf("E entao? Preparado? ");
+    system("pause");
 }
 
 // função que pega o nome do jogador
@@ -24,16 +22,38 @@ static char* jogador(char identificacao[]) {
 
 // função que seleciona a dificuldade
 int difficulty(int difficulty) {
+    int r = 1;
     printf("Vamos começar com a dificuldade. Digite 1 para facil, 2 para medio ou 3 para dificil.\n");
-    scanf("%d", &difficulty);
-    if (difficulty == 1){
-        printf("Vai jogar no facil? Tá de brincadeira?\n");
-    } else if (difficulty == 2) {
+
+    do { scanf("%d", &difficulty);
+    
+    switch (difficulty) {
+    case 1:
+        printf("Vai jogar no facil? Ta de brincadeira?\n");
+        system("pause");
+        system("cls");
+        r = 0;
+        break;
+
+    case 2:
         printf("Medio? Aceitavel.\n");
-    } else if (difficulty == 3) {
+        system("pause");
+        system("cls");
+        r = 0;
+        break;
+
+    case 3:
         printf("Dificil? Ai sim, gostei.\n");
-    } else {
-        printf("Caractere invalido. Vai ter que reiniciar.\n");
-    }
+        system("pause");
+        system("cls");
+        r = 0;
+        break;
+    
+    default:
+        printf("Caractere invalido. Digite um caractere valido.\n");
+        system("pause");
+        }
+    } while (r != 0);
+
     return difficulty;
 }

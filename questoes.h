@@ -2,40 +2,149 @@
 #include <stdlib.h>
 #include <time.h>
 
-
-int questao(FILE *questao[15]) {
+int questaoFacil(FILE *questaoF[15]) {
     int p = 0, i, c;
     char question[100], r;
     char answer[16] = "ddddddddddddddd";
-    questao[0] = fopen("1.txt", "r");
-    questao[1] = fopen("2.txt", "r");
-    questao[2] = fopen("3.txt", "r");
-    questao[3] = fopen("4.txt", "r");
-    questao[4] = fopen("5.txt", "r");
-    questao[5] = fopen("6.txt", "r");
-    questao[6] = fopen("7.txt", "r");
-    questao[7] = fopen("8.txt", "r");
-    questao[8] = fopen("9.txt", "r");
-    questao[9] = fopen("10.txt", "r");
-    questao[10] = fopen("11.txt", "r");
-    questao[11] = fopen("12.txt", "r");
-    questao[12] = fopen("13.txt", "r");
-    questao[13] = fopen("14.txt", "r");
-    questao[14] = fopen("15.txt", "r");
+    questaoF[0] = fopen("1f.txt", "r");
+    questaoF[1] = fopen("2f.txt", "r");
+    questaoF[2] = fopen("3f.txt", "r");
+    questaoF[3] = fopen("4f.txt", "r");
+    questaoF[4] = fopen("5f.txt", "r");
+    questaoF[5] = fopen("6f.txt", "r");
+    questaoF[6] = fopen("7f.txt", "r");
+    questaoF[7] = fopen("8f.txt", "r");
+    questaoF[8] = fopen("9f.txt", "r");
+    questaoF[9] = fopen("10f.txt", "r");
+    questaoF[10] = fopen("11f.txt", "r");
+    questaoF[11] = fopen("12f.txt", "r");
+    questaoF[12] = fopen("13f.txt", "r");
+    questaoF[13] = fopen("14f.txt", "r");
+    questaoF[14] = fopen("15f.txt", "r");
 
     srand(time(NULL));
 
     for (i = 0; i < 5; i++) {
         c = rand() % 14;
-        while (fgets(question, 100, questao[c]) !=NULL) {
+
+        while (fgets(question, 100, questaoF[c]) != NULL) {
             printf("%s\n", question);
         }
-        chamar();
+
+        scanf("%c", &r);
+        if (r == 10) {
+            scanf("%c", &r);
+        }
+
         if (r == answer[c]) {
             p++;
         }
-        
+
+        system("cls");
+    }
+
+    return p;
+}
+
+int questaoMedio(FILE *questaoM[20]) {
+    int p = 0, i, c;
+    char question[100], r;
+    char answer[21] = "dddddddddddddddddddd";
+    questaoM[0] = fopen("1m.txt", "r");
+    questaoM[1] = fopen("2m.txt", "r");
+    questaoM[2] = fopen("3m.txt", "r");
+    questaoM[3] = fopen("4m.txt", "r");
+    questaoM[4] = fopen("5m.txt", "r");
+    questaoM[5] = fopen("6m.txt", "r");
+    questaoM[6] = fopen("7m.txt", "r");
+    questaoM[7] = fopen("8m.txt", "r");
+    questaoM[8] = fopen("9m.txt", "r");
+    questaoM[9] = fopen("10m.txt", "r");
+    questaoM[10] = fopen("11m.txt", "r");
+    questaoM[11] = fopen("12m.txt", "r");
+    questaoM[12] = fopen("13m.txt", "r");
+    questaoM[13] = fopen("14m.txt", "r");
+    questaoM[14] = fopen("15m.txt", "r");
+    questaoM[15] = fopen("16m.txt", "r");
+    questaoM[16] = fopen("17m.txt", "r");
+    questaoM[17] = fopen("18m.txt", "r");
+    questaoM[18] = fopen("19m.txt", "r");
+    questaoM[19] = fopen("20m.txt", "r");
+
+    srand(time(NULL));
+
+    for (i = 0; i < 5; i++) {
+        c = rand() % 14;
+
+        while (fgets(question, 100, questaoM[c]) != NULL) {
+            printf("%s\n", question);
+        }
+
+        scanf("%c", &r);
+        if (r == 10) {
+            scanf("%c", &r);
+        }
+
+        if (r == answer[c]) {
+            p++;
+        }
+
+        system("cls");
     }
     
-    return c;
+    return p;
+}
+
+int questaoDificil(FILE *questaoD[25]) {
+    int p = 0, i, c;
+    char question[100], r;
+    char answer[26] = "ddddddddddddddddddddddddd";
+    questaoD[0] = fopen("1d.txt", "r");
+    questaoD[1] = fopen("2d.txt", "r");
+    questaoD[2] = fopen("3d.txt", "r");
+    questaoD[3] = fopen("4d.txt", "r");
+    questaoD[4] = fopen("5d.txt", "r");
+    questaoD[5] = fopen("6d.txt", "r");
+    questaoD[6] = fopen("7d.txt", "r");
+    questaoD[7] = fopen("8d.txt", "r");
+    questaoD[8] = fopen("9d.txt", "r");
+    questaoD[9] = fopen("10d.txt", "r");
+    questaoD[10] = fopen("11d.txt", "r");
+    questaoD[11] = fopen("12d.txt", "r");
+    questaoD[12] = fopen("13d.txt", "r");
+    questaoD[13] = fopen("14d.txt", "r");
+    questaoD[14] = fopen("15d.txt", "r");
+    questaoD[15] = fopen("16d.txt", "r");
+    questaoD[16] = fopen("17d.txt", "r");
+    questaoD[17] = fopen("18d.txt", "r");
+    questaoD[18] = fopen("19d.txt", "r");
+    questaoD[19] = fopen("20d.txt", "r");
+    questaoD[20] = fopen("21d.txt", "r");
+    questaoD[21] = fopen("22d.txt", "r");
+    questaoD[22] = fopen("23d.txt", "r");
+    questaoD[23] = fopen("24d.txt", "r");
+    questaoD[24] = fopen("25d.txt", "r");
+
+    srand(time(NULL));
+
+    for (i = 0; i < 5; i++) {
+        c = rand() % 14;
+
+        while (fgets(question, 100, questaoD[c]) != NULL) {
+            printf("%s\n", question);
+        }
+
+        scanf("%c", &r);
+        if (r == 10) {
+            scanf("%c", &r);
+        }
+
+        if (r == answer[c]) {
+            p++;
+        }
+
+        system("cls");
+    }
+    
+    return p;
 }
