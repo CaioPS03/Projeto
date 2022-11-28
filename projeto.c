@@ -62,8 +62,7 @@ int main()
         printf("\t\t\t|                                 Menu                                 |\n");
         printf("\t\t\t+----------------------------------------------------------------------+\n");
         printf("\t\t\t|                            1 - Iniciar                               |\n");
-        printf("\t\t\t|                            2 - Pontuacao                             |\n");
-        printf("\t\t\t|                            3 - Sair                                  |\n");
+        printf("\t\t\t|                            2 - Sair                                  |\n");
         printf("\t\t\t+----------------------------------------------------------------------+\n");
         gotoxy(50, li);
         printf("->");
@@ -82,10 +81,10 @@ int main()
                     li--;
                 else if (tecla == 80)
                     li++;
-                if (li > 5)
+                if (li > 4)
                     li = 3;
                 else if (li < 3)
-                    li = 5;
+                    li = 4;
                 gotoxy(50, li);
                 printf("->");
                 gotoxy(79, 24);
@@ -95,10 +94,10 @@ int main()
         switch (li)
         {
         case 3:
-            iniciar(1);
+            iniciar();
             break;
 
-        case 5:
+        case 4:
             exit(0);
         }
     } while (li != 6);

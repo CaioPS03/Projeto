@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "questoes.h": "c",
+        "locale.h": "c"
+    }
+}

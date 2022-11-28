@@ -4,12 +4,14 @@
 // função que mostra as regras do jogo e faz uma apresentação
 void apresentacao()
 {
-    char confirma;
     system("cls");
-    printf("Ola, caro jogador! Bem-vindo ao nosso humilde desafio. \n");
-    printf("Você participara de algumas questoes preparadas pelos desenvolvedores. \n");
-    printf("A dificuldade e quantidade das questoes vai depender da dificuldade que escolher. \n");
-    printf("E entao? Preparado? ");
+    printf("\t\t+--------------------------------------------------------------------------------------+\n");
+    printf("\t\t|                Ola, caro jogador! Bem-vindo ao nosso humilde desafio.                |\n");
+    printf("\t\t|        Voce participara de algumas questoes preparadas pelos desenvolvedores.        |\n");
+    printf("\t\t|  A dificuldade e quantidade das questoes vai depender da dificuldade que escolher.   |\n");
+    printf("\t\t|                                  E entao? Preparado?                                 |\n");
+    printf("\t\t+--------------------------------------------------------------------------------------+\n");
+    printf("\n");
     system("pause");
 }
 
@@ -17,9 +19,16 @@ void apresentacao()
 static char *jogador(char identificacao[])
 {
     system("cls");
-    printf("Primeiro de tudo... Qual o seu nome? \n");
+    printf("\t\t\t+----------------------------------------------------------------------+\n");
+    printf("\t\t\t|                 Primeiro de tudo... Qual o seu nome?                 |\n");
+    printf("\t\t\t+----------------------------------------------------------------------+\n");
+    printf("\n");
     scanf("%s", identificacao);
-    printf("Beleza, %s, agora vai!\n", identificacao);
+    printf("\t\t\t+----------------------------------------------------------------------+\n");
+    printf("\t\t\t                      Beleza, %s, agora vai!                            \n", identificacao);
+    printf("\t\t\t+----------------------------------------------------------------------+\n");
+    printf("\n");
+    system("pause");
     return identificacao;
 }
 
@@ -28,38 +37,52 @@ int difficulty(int difficulty)
 {
     system("cls");
     int r = 1;
-    printf("Vamos começar com a dificuldade. Digite 1 para facil, 2 para medio ou 3 para dificil.\n");
 
     do
     {
-        scanf("%d", &difficulty);
+        printf("\t\t\t+----------------------------------------------------------------------+\n");
+        printf("\t\t\t                    Vamos comecar com a dificuldade.                    \n"); 
+        printf("\t\t\t           Digite 1 para facil, 2 para medio ou 3 para dificil.         \n");
+        printf("\n");
+        scanf("\t\t\t%d", &difficulty);
 
         switch (difficulty)
         {
         case 1:
-            printf("Vai jogar no facil? Ta de brincadeira?\n");
+            printf("\t\t\t                  Vai jogar no facil? Ta de brincadeira?\n");
+            printf("\t\t\t+----------------------------------------------------------------------+\n");
+            printf("\n");
             system("pause");
             system("cls");
             r = 0;
             break;
 
         case 2:
-            printf("Medio? Aceitavel.\n");
+            printf("\t\t\t                            Medio? Aceitavel.\n");
+            printf("\t\t\t+----------------------------------------------------------------------+\n");
+            printf("\n");
             system("pause");
             system("cls");
             r = 0;
             break;
 
         case 3:
-            printf("Dificil? Ai sim, gostei.\n");
+            printf("\t\t\t                         Dificil? Ai sim, gostei.\n");
+            printf("\t\t\t+----------------------------------------------------------------------+\n");
+            printf("\n");
             system("pause");
             system("cls");
             r = 0;
             break;
 
         default:
-            printf("Caractere invalido. Digite um caractere valido.\n");
+            printf("\t\t\t                Caractere invalido. Digite um caractere valido.\n");
+            printf("\t\t\t+----------------------------------------------------------------------+\n");
+            printf("\n");
             system("pause");
+            system("cls");
+            fflush(stdin);
+            break;
         }
     } while (r != 0);
 

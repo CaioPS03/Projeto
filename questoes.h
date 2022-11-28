@@ -32,9 +32,7 @@ int questaoFacil(FILE *questaoF[15]) {
         }
 
         scanf("%c", &r);
-        if (r == 10) {
-            scanf("%c", &r);
-        }
+        fflush(stdin);
 
         if (r == answer[c]) {
             p++;
@@ -73,7 +71,7 @@ int questaoMedio(FILE *questaoM[20]) {
 
     srand(time(NULL));
 
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < 10; i++) {
         c = rand() % 14;
 
         while (fgets(question, 100, questaoM[c]) != NULL) {
@@ -81,9 +79,7 @@ int questaoMedio(FILE *questaoM[20]) {
         }
 
         scanf("%c", &r);
-        if (r == 10) {
-            scanf("%c", &r);
-        }
+        fflush(stdin);
 
         if (r == answer[c]) {
             p++;
@@ -127,7 +123,7 @@ int questaoDificil(FILE *questaoD[25]) {
 
     srand(time(NULL));
 
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < 15; i++) {
         c = rand() % 14;
 
         while (fgets(question, 100, questaoD[c]) != NULL) {
@@ -135,9 +131,7 @@ int questaoDificil(FILE *questaoD[25]) {
         }
 
         scanf("%c", &r);
-        if (r == 10) {
-            scanf("%c", &r);
-        }
+        fflush(stdin);
 
         if (r == answer[c]) {
             p++;

@@ -1,1 +1,0 @@
-gcc (nome do arquivo) -g [usar em c]
