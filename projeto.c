@@ -1,46 +1,107 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <locale.h>
-#include <time.h>
+#include <conio.h>
+#include <windows.h>
 #include "iniciar.h"
-#include "dificuldade.h"
-#include "questoes.h"
 
+typedef enum
+{
+    BLACK,
+    BLUE,
+    GREEN,
+    CYAN,
+    RED,
+    MAGENTA,
+    BROWN,
+    LIGHTGRAY,
+    DARKGRAY,
+    LIGHTBLUE,
+    LIGHTGREEN,
+    LIGHTCYAN,
+    LIGHTRED,
+    LIGHTMAGENTA,
+    YELLOW,
+    WHITE
+} COLORS;
+static int __BACKGROUND = BLACK;
+static int __FOREGROUND = LIGHTGRAY;
 
-int main() {
-    char nome[20];
-    int dificuldade, op, pt;
-    FILE *questoesF[15], *questoesM[20], *questoesD[25];
-        do { op = iniciar(op);
-        switch (op) {
-        case 1:
-            apresentacao();
-            jogador(nome);
-            dificuldade = difficulty(dificuldade);
-            switch (dificuldade) {
-            case 1:
-                pt = questaoFacil(questoesF);
-                break;
+void textcolor(int letra, int fundo)
+{
+    __FOREGROUND = letra;
+    __BACKGROUND = fundo;
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),
+                            letra + (__BACKGROUND << 4));
+}
+void gotoxy(int x, int y)
+{
+    COORD c;
+    c.X = x;
+    c.Y = y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
+}
 
-            case 2:
-                pt = questaoMedio(questoesM);
-                break;
-
-            case 3:
-                pt = questaoDificil(questoesD);
-                break;
-            
-            default:
-                break;
+void sair()
+{
+    textcolor(11, 3);
+    gotoxy(0, 20);
+    printf("Saindo . . . !    tecle\n\n");
+    getch();
+    textcolor(7, 0);
+    exit(0);
+}
+int main()
+{
+    int li = 3, tecla;
+    setlocale(LC_ALL, "");
+    do
+    {
+        textcolor(2, 0);
+        system("cls");
+        printf("\t\t\t+----------------------------------------------------------------------+\n");
+        printf("\t\t\t|                                 Menu                                 |\n");
+        printf("\t\t\t+----------------------------------------------------------------------+\n");
+        printf("\t\t\t|                            1 - Iniciar                               |\n");
+        printf("\t\t\t|                            2 - Pontuacao                             |\n");
+        printf("\t\t\t|                            3 - Sair                                  |\n");
+        printf("\t\t\t+----------------------------------------------------------------------+\n");
+        gotoxy(50, li);
+        printf("->");
+        gotoxy(79, 24);
+        do
+        {
+            tecla = 0;
+            if (kbhit())
+            {
+                tecla = getch();
+                gotoxy(50, li);
+                printf("  ");
+                if (tecla == 224)
+                    tecla = getch();
+                if (tecla == 72)
+                    li--;
+                else if (tecla == 80)
+                    li++;
+                if (li > 5)
+                    li = 3;
+                else if (li < 3)
+                    li = 5;
+                gotoxy(50, li);
+                printf("->");
+                gotoxy(79, 24);
             }
-            break;
-
+        } while (tecla != 13);
+        system("cls");
+        switch (li)
+        {
         case 3:
-            system("cls");
+            iniciar(1);
             break;
-        
-        default:
-            break;
-            }
-        }while (op != 3);
+
+        case 5:
+            exit(0);
+        }
+    } while (li != 6);
+    textcolor(7, 0);
+    return 0;
 }
