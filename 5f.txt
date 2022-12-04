@@ -1,2 +1,2 @@
-Quantos metros quadrados tem uma casa com 30 metros de largura e comprimento?
-750 800 850 900
+Qual a definição de um browser?
+a)Hardware que diminui a temperatura do computador  b)Navegador de internet  c)Anti-virus  d)Software de gerenciamento

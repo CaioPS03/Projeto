@@ -1,2 +1,2 @@
-Quantos metros quadrados tem uma casa com 30 metros de largura e comprimento?
-750 800 850 900
+Qual comando possibilita permitir ou negar mensagens de terminal e pedidos de conversação (talk requests) no Linux?
+a)pine  b)talk  c)write  d)mesg

@@ -5,7 +5,7 @@
 int questaoFacil(FILE *questaoF[15]) {
     int p = 0, i, c;
     char question[100], r;
-    char answer[16] = "ddddddddddddddd";
+    char answer[16] = "bddcbcdcbabaadc";
     questaoF[0] = fopen("1f.txt", "r");
     questaoF[1] = fopen("2f.txt", "r");
     questaoF[2] = fopen("3f.txt", "r");

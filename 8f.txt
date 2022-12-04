@@ -1,2 +1,2 @@
-Quantos metros quadrados tem uma casa com 30 metros de largura e comprimento?
-750 800 850 900
+Qual das alternativas abaixo não representa uma distribuição Linux?
+a)Ubuntu  b)Kurumin  c)Firebird d)BackTrack

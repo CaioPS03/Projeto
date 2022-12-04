@@ -1,2 +1,2 @@
-Quantos metros quadrados tem uma casa com 30 metros de largura e comprimento?
-750 800 850 900
+Qual dos comandos abaixo pode alterar a permissão de acesso de um objeto do sistema no Linux?
+a)cd  b)chmod  c)df  d)cat

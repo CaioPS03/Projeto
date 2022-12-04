@@ -1,2 +1,2 @@
-Quantos metros quadrados tem uma casa com 30 metros de largura e comprimento?
-750 800 850 900
+Qual atalho é usado para acionar o modo de navegação anônima no google chrome/
+a)Ctrl + A  b)Shift + Alt + P  c)Alt + Ctrl + N  d)Shift + Ctrl + N
