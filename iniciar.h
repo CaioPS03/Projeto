@@ -5,10 +5,10 @@
 #include "dificuldade.h"
 #include "questoes.h"
 
-int iniciar()
+void iniciar()
 {
     char nome[20];
-    int dificuldade, pt;
+    int dificuldade;
     FILE *questoesF[15], *questoesM[20], *questoesD[25];
     
     apresentacao();
@@ -17,20 +17,18 @@ int iniciar()
     switch (dificuldade)
     {
     case 1:
-        pt = questaoFacil(questoesF);
+        questaoFacil(questoesF);
         break;
 
     case 2:
-        pt = questaoMedio(questoesM);
+        questaoMedio(questoesM);
         break;
 
     case 3:
-        pt = questaoDificil(questoesD);
+        questaoDificil(questoesD);
         break;
 
     default:
         break;
     }
-
-    return pt;
 }

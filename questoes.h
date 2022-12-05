@@ -31,8 +31,8 @@ int questaoFacil(FILE *questaoF[15]) {
             printf("%s\n", question);
         }
 
-        scanf("%c", &r);
         fflush(stdin);
+        scanf("%c", &r);
 
         if (r == answer[c]) {
             p++;
@@ -41,7 +41,39 @@ int questaoFacil(FILE *questaoF[15]) {
         system("cls");
     }
 
-    return p;
+    printf("\t\t\t+----------------------------------------------------------------------+\n");
+    switch (p)
+    {
+    case 0:
+        printf("\t\t\t\tVoce nao serve pra isso. Saia daqui.\n\n");
+        system("pause");
+        break;
+
+    case 1:
+        printf("\t\t\t\tAcertou uma so. Nao ta indo bem.\n\n");
+        system("pause");
+        break;
+
+    case 2:
+        printf("\t\t\t\t\tTeve dois acertos. Nao ta bom.\n\n");
+        system("pause");
+        break;
+
+    case 3:
+        printf("\t\t\t\tAcertou tres questoes. Razoavel.\n\n");
+        system("pause");
+        break;
+
+    case 4:
+        printf("\t\t\t\tQuatro? Ta indo bem.\n");
+        system("pause");
+        break;
+
+    default:
+        printf("\t\t\t\tCinco? Mandou bem. So tem que parar de jogar no facil.\n\n");
+        system("pause");
+        break;
+    }
 }
 
 int questaoMedio(FILE *questaoM[20]) {
